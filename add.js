@@ -7,35 +7,51 @@ form.addEventListener('submit', async (e) => {
   const description = document.getElementById('description').value;
   const alcohol = document.getElementById('alcohol').value;
   const country = document.getElementById('country').value;
-  const image = document.getElementById('image').value;
+  const imageInput = document.getElementById('image');
+
+  const formData = new FormData();
+  formData.append('image', imageInput.files[0]);
+
   const currentDate = new Date();
   const date = currentDate.toISOString().slice(0, 10);
 
-  const data = {
-    name,
-    date,
-    description,
-    alcohol,
-    country,
-    image
-  };
-
   try {
-    const response = await fetch('http://localhost:3000/add', {
+    const imageResponse = await fetch('http://localhost:3000/upload', {
+      method: 'POST',
+      body: formData
+    });
+
+    if (!imageResponse.ok) {
+      console.error('Error uploading image');
+      return;
+    }
+
+    const imagePath = await imageResponse.text();
+
+    const data = {
+      name,
+      date,
+      description,
+      alcohol,
+      country,
+      image: imagePath
+    };
+
+    const dataResponse = await fetch('http://localhost:3000/add', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(data)
     });
-
-    if (response.ok) {
-      console.log('Data added successfully');
-      alert("CAN IS SUCCESSFULY ADDED");
-    } else {
+  
+    if (dataResponse.ok) {
+      console.log('Image uploaded and data added successfully');
+      alert('Image uploaded and data added successfully');
+    }else {
       console.error('Error adding data');
     }
-  } catch (error) {
+  }catch (error) {
     console.error('Error:', error);
   }
 });
