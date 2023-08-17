@@ -1,4 +1,7 @@
-fetch('http://localhost:3000')
+var sortBy = 'alcohol';
+var sort = 'desc';
+
+fetch(`http://localhost:3000/sorted?sortBy=${sortBy}&sortOrder=${sort}`)
   .then(response => response.json())
   .then(data => {
     const postsContainer = document.getElementById('posts-container');
