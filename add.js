@@ -7,6 +7,8 @@ form.addEventListener('submit', async (e) => {
   const description = document.getElementById('description').value;
   const alcohol = document.getElementById('alcohol').value;
   const country = document.getElementById('country').value;
+  const contributor = document.getElementById('contributor').value;
+  const location = document.getElementById('location-select').value;
   const imageInput = document.getElementById('image');
 
   const formData = new FormData();
@@ -34,6 +36,8 @@ form.addEventListener('submit', async (e) => {
       description,
       alcohol,
       country,
+      contributor,
+      location,
       image: imagePath
     };
 

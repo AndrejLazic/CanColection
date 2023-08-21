@@ -10,10 +10,31 @@
 <body>
     <form id="add-form">
         <input type="text" id="name" placeholder="Name" required>
-        <input type="text" id="description" placeholder="Description" required>
+
+        <label for="description">Beverage:</label>
+        <select id="description" placeholder="Description" required>
+            <option disabled selected hidden></option>
+            <option>Beer</option>
+            <option>Energy Drink</option>
+            <option>Juice</option>
+        </select>
+
         <input type="text" id="alcohol" placeholder="Alcohol" required>
+
         <input type="text" id="country" placeholder="Country" required>
+
+        <input type="text" id="contributor" placeholder="Your Name" required>
+
+        <label for="location-select">Location:</label>
+        <select id="location-select" required>
+            <option disabled selected hidden></option>
+            <option>Kosancic Ivana, Novi Sad</option>
+            <option>Doza Derdja, Novi Sad</option>
+            <option>Ilije Bircanina, Sombor</option>
+        </select>
+
         <input type="file" id="image" accept="image/*" required>
+        
         <button type="submit">Add</button>
       </form>
 </body>

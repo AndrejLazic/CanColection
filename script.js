@@ -37,6 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                     <li class="list-group-item">Type: ${post.description}</li>
                                     <li class="list-group-item">Alcohol: ${post.alcohol}%</li>
                                     <li class="list-group-item">Country: ${post.country}</li>
+                                    <li class="list-group-item">Contributor: ${post.Contributor}</li>
                                     <li class="list-group-item">Date added: ${date[2]}.${date[1]}.${date[0]}.</li>
                                   </ul>
                                 </div>
