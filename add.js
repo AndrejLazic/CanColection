@@ -52,15 +52,16 @@ form.addEventListener('submit', async (e) => {
     if (dataResponse.ok) {
       console.log('Image uploaded and data added successfully');
       alert('Image uploaded and data added successfully');
-      window.location.href = 'http://127.0.0.1:5500/index.html';
-    }else {
+      window.location.href = 'index.html';
+    }
+    else {
       console.error('Error adding data');
       alert('Error adding data');
-      window.location.href = 'http://127.0.0.1:5500/add.html';
+      window.location.reload();
     }
 
-    
-  }catch (error) {
+  }
+  catch (error) {
     console.error('Error:', error);
   }
 });
