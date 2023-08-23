@@ -1,33 +1,42 @@
-const form = document.getElementById('login-form');
+const storedUsername = sessionStorage.getItem('username');
 
-form.addEventListener('submit', async (e) => {
-    e.preventDefault();
+if(storedUsername !== null){
+    window.location.href = 'add.html';
+}
+else{
 
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
+    const loginForm = document.getElementById('login-form');
 
-    const formData = {username, password};
+    loginForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
 
-    try{
-        const dataResponse = await fetch('http://localhost:3000/log', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(formData)
-        });
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
 
-        if (dataResponse.ok) {
-            console.log('Successfully loged in');
-            window.location.href = 'add.html';
-          }
-          else {
-            console.error('Bad username or password');
-            alert('Bad username or password');
-            window.location.reload();
-          }
-    }
-    catch(error){
-        console.error('Error:', error);
-    }
-});
+        const formData = {username, password};
+
+        try{
+            const dataResponse = await fetch('http://localhost:3000/log', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            });
+
+            if (dataResponse.ok) {
+                console.log('Successfully loged in');
+                sessionStorage.setItem('username', username);
+                window.location.href = 'add.html';
+            }
+            else {
+                console.error('Bad username or password');
+                alert('Bad username or password');
+                window.location.reload();
+            }
+        }
+        catch(error){
+            console.error('Error:', error);
+        }
+    });
+}
