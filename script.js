@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const sortBy = sortSelect.value;
     const orderBy = sortDirection.value;
 
-    fetch(`http://localhost:3000/sorted?sortBy=${sortBy}&orderBy=${orderBy}&searchBy=${searchBy}`)
+    fetch(`http://188.2.161.221:80/sorted?sortBy=${sortBy}&orderBy=${orderBy}&searchBy=${searchBy}`)
       .then(response => response.json())
       .then(data => {
         const postsContainer = document.getElementById('posts-container');
@@ -51,12 +51,11 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error('Error fetching data:', error);
       });
   }
-  // Dodajte osluškivače događaja na selektovane elemente
+  
   searchSelect.addEventListener('change', updatePosts);
   sortSelect.addEventListener('change', updatePosts);
   sortDirection.addEventListener('change', updatePosts);
-
-  // Početni fetch i ažuriranje pri učitavanju stranice
+  
   updatePosts();
 
 });
