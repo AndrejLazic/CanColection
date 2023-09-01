@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const sortBy = sortSelect.value;
     const orderBy = sortDirection.value;
 
-    fetch(`https://188.2.161.221/sorted?sortBy=${sortBy}&orderBy=${orderBy}&searchBy=${searchBy}`)
+    fetch(`http://188.2.164.39:3000/sorted?sortBy=${sortBy}&orderBy=${orderBy}&searchBy=${searchBy}`)
       .then(response => response.json())
       .then(data => {
         const postsContainer = document.getElementById('posts-container');

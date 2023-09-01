@@ -25,7 +25,7 @@ else{
     const date = currentDate.toISOString().slice(0, 10);
 
     try {
-      const imageResponse = await fetch('http://localhost:3000/upload', {
+      const imageResponse = await fetch('http://188.2.164.39:3000/upload', {
         method: 'POST',
         body: formData
       });
@@ -48,7 +48,7 @@ else{
         image: imagePath
       };
 
-      const dataResponse = await fetch('http://localhost:3000/add', {
+      const dataResponse = await fetch('http://188.2.164.39:3000/add', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

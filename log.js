@@ -16,7 +16,7 @@ else{
         const formData = {username, password};
 
         try{
-            const dataResponse = await fetch('http://localhost:3000/log', {
+            const dataResponse = await fetch('http://188.2.164.39:3000/log', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
