@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const sortBy = sortSelect.value;
     const orderBy = sortDirection.value;
 
-    fetch(`http://188.2.164.39:3000/sorted?sortBy=${sortBy}&orderBy=${orderBy}&searchBy=${searchBy}`)
+    fetch(`https://188.2.164.39:3000/sorted?sortBy=${sortBy}&orderBy=${orderBy}&searchBy=${searchBy}`)
       .then(response => response.json())
       .then(data => {
         const postsContainer = document.getElementById('posts-container');
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
           
           postDiv.innerHTML = `
                                 <div class="card">
-                                  <img src="http://localhost:3000/images/${image}" style="max-width: 540px; class="card-img-top" alt="${image}">
+                                  <img src="https://188.2.164.39:3000/images/${image}" style="max-width: 540px; class="card-img-top" alt="${image}">
                                   <div class="card-body">
                                     <h5 class="card-title">${post.name}</h5>
                                   <ul class="list-group list-group-flush">
