@@ -1,4 +1,5 @@
 const storedUsername = sessionStorage.getItem('username');
+const url = 'http://limenke.giize.com:3000';
 
 if(storedUsername == null){
   window.location.href = 'log.html';
@@ -25,7 +26,7 @@ else{
     const date = currentDate.toISOString().slice(0, 10);
 
     try {
-      const imageResponse = await fetch('https://188.2.164.39:3000/upload', {
+      const imageResponse = await fetch(`${url}/upload`, {
         method: 'POST',
         body: formData
       });
@@ -48,7 +49,7 @@ else{
         image: imagePath
       };
 
-      const dataResponse = await fetch('https://188.2.164.39:3000/add', {
+      const dataResponse = await fetch(`${url}/add`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

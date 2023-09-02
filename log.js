@@ -1,4 +1,5 @@
 const storedUsername = sessionStorage.getItem('username');
+const url = 'http://limenke.giize.com:3000';
 
 if(storedUsername !== null){
     window.location.href = 'add.html';
@@ -16,7 +17,7 @@ else{
         const formData = {username, password};
 
         try{
-            const dataResponse = await fetch('https://188.2.164.39:3000/log', {
+            const dataResponse = await fetch(`${url}/log`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
