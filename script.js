@@ -1,4 +1,4 @@
-const url = 'http://limenke.giize.com:3000';
+const url = 'https://limenke.giize.com';
 
 document.addEventListener('DOMContentLoaded', () => {
 
