@@ -32,7 +32,9 @@ document.addEventListener('DOMContentLoaded', () => {
           
           postDiv.innerHTML = `
                                 <div class="card">
-                                  <img src="${url}/images/${image}" style="max-width: 540px; class="card-img-top" alt="${image}">
+                                  <div class="card-img-top" style="width: auto; height: 300px; display: flex; justify-content: center; overflow: hidden;">
+                                    <img src="${url}/images/${image}" style="width: auto; height: 100%;" alt="${image}">
+                                  </div>
                                   <div class="card-body">
                                     <h5 class="card-title">${post.name}</h5>
                                   <ul class="list-group list-group-flush">
