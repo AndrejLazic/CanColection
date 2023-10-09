@@ -7,10 +7,13 @@ if(storedUsername == null){
 else{
   console.log(storedUsername);
   const form = document.getElementById('add-form');
+  const submitButton = document.getElementById('submit-button');
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
+    submitButton.disabled = true;
+    
     const name = document.getElementById('name').value;
     const description = document.getElementById('description').value;
     const alcohol = document.getElementById('alcohol').value;
