@@ -5,7 +5,6 @@ if(storedUsername == null){
   window.location.href = 'log.html';
 }
 else{
-  console.log(storedUsername);
   const form = document.getElementById('add-form');
   const submitButton = document.getElementById('submit-button');
 
@@ -13,7 +12,7 @@ else{
     e.preventDefault();
 
     submitButton.disabled = true;
-    
+
     const name = document.getElementById('name').value;
     const description = document.getElementById('description').value;
     const alcohol = document.getElementById('alcohol').value;
