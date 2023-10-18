@@ -25,9 +25,12 @@ document.addEventListener('DOMContentLoaded', () => {
           image = image.substring(image.lastIndexOf('/') + 1);
 
           var date = post.date;
+          console.log(date);
           date = date.split("T");
           date = date[0];
           date = date.split("-");
+          date[2] = parseInt(date[2]) + 1;
+          console.log(date);
         
           
           postDiv.innerHTML = `
@@ -42,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                     <li class="list-group-item">Alcohol: ${(post.alcohol).toFixed(1)}%</li>
                                     <li class="list-group-item">Country: ${post.country}</li>
                                     <li class="list-group-item">Contributor: ${post.Contributor}</li>
-                                    <li class="list-group-item">Date added: ${date[2]}.${date[1]}.${date[0]}.</li>
+                                    <li class="list-group-item">Date added: ${date[2]++}.${date[1]}.${date[0]}.</li>
                                   </ul>
                                 </div>
                               `;
