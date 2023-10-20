@@ -13,7 +13,7 @@ else{
 
     submitButton.disabled = true;
 
-    const name = document.getElementById('name').value;
+    var name = document.getElementById('name').value;
     const description = document.getElementById('description').value;
     const alcohol = document.getElementById('alcohol').value;
     const country = document.getElementById('country').value;
@@ -26,6 +26,14 @@ else{
 
     const currentDate = new Date();
     const date = currentDate.toISOString().slice(0, 10);
+
+    const words = name.split(' ');
+
+    const capitalizedWords = words.map(word => {
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    });
+
+    name = capitalizedWords.join(' ');
 
     try {
       const imageResponse = await fetch(`${url}/upload`, {
