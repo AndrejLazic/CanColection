@@ -1,5 +1,5 @@
 const storedUsername = sessionStorage.getItem('username');
-const url = 'https://limenke.giize.com';
+const url = 'https://limenke.giize.com:3000';
 
 if(storedUsername !== null){
     window.location.href = 'add.html';
